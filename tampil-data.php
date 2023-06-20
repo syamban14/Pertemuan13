@@ -52,7 +52,7 @@ if ($_SESSION['status'] != 'login') {
     </form>
 
     <br>
-    <a href="tambah-data.php">::Tambah Data::</a>
+    <a href="tambah-data.php">::Tambah Data::</a> | <a href="penjualan.php">Transaksi</a>
     <table border="1">
         <tr>
             <td>Kode Barang</td>

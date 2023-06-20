@@ -6,6 +6,26 @@ $nama = htmlspecialchars($_POST['nama']);
 $harga = htmlspecialchars($_POST['harga']);
 $stok = htmlspecialchars($_POST['stok']);
 
+$namaFile = $_FILES['gambar']['name'];
+$ukuranFile = $_FILES['gambar']['size'];
+$extAllow = ['jpg', 'jpeg', 'png'];
+$validExt = explode(".", $namaFile);
+$Extvalid = strtolower(end($validExt));
+$tmpName = $_FILES['gambar']['tmp_name'];
+
+// cek kondisi ukursan file
+if ($ukuranFile <= 2000000) {
+    // cek kondisi validasi dari extension
+    if (in_array($Extvalid, $extAllow)) {
+        echo 'Extension ada';
+    }
+} else {
+    echo "salah";
+}
+die();
+
+
+
 $sql = "SELECT * FROM barang WHERE kode_barang = '$kode'";
 $query = mysqli_query($koneksi, $sql);
 $baris = mysqli_fetch_array($query);
